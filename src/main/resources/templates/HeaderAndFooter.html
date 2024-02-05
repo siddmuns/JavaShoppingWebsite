@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <title>Store Page</title>
+</head>
+<body>
+<header th:fragment="header">
+    <h1>XYZ Store</h1>
+    <nav>
+        <ul>
+            <li><a th:href="@{/}">Home</a></li>
+            <li><a th:href="@{/products}">Products</a></li>
+            <li><a th:href="@{/cart}">Cart</a></li>
+            <li><a th:href="@{/checkout}">Checkout</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <!-- Main content specific to each page -->
+</main>
+<footer th:fragment="footer">
+    Munsif Siddiqui | 991680159&nbsp;&nbsp;<span class='hart'>&#9825;</span>&nbsp;&nbsp;
+</footer>
+</body>
+</html>
