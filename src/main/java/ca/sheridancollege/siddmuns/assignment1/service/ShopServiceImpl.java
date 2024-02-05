@@ -6,11 +6,20 @@ import ca.sheridancollege.siddmuns.assignment1.model.ShoppingCart;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Random;
 
 @Service
 public class ShopServiceImpl implements ShopService {
     private final Inventory inventory = new Inventory();
     private final ShoppingCart shoppingCart = new ShoppingCart();
+
+    @Override
+    public int getRandomId() {
+        Random random = new Random();
+        int randId;
+        randId = random.nextInt(100000000,999999999);
+        return randId;
+    }
 
     @Override
     public void addProductToShoppingCart(int id) {
@@ -19,9 +28,13 @@ public class ShopServiceImpl implements ShopService {
     }
 
     @Override
-    public void insertProductToInventory(int id, String name, float price) {
-        Product product = new Product(id,name,price);
+    public void insertProductToInventory(Product product) {
         inventory.insertProduct(product);
+    }
+
+    @Override
+    public int getCartCapacity() {
+        return shoppingCart.getCapacity();
     }
 
     @Override
@@ -30,7 +43,7 @@ public class ShopServiceImpl implements ShopService {
     }
 
     @Override
-    public Object getShoppingCart() {
+    public List<Product> getShoppingCart() {
         return shoppingCart.getCartItems();
     }
 }

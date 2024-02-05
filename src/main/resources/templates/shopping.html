@@ -1,10 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" href="../static/css/header.css" th:href="@{/css/header.css}">
+    <link rel="stylesheet" href="../static/css/main.css" th:href="@{/css/main.css}">
+    <link rel="stylesheet" href="../static/css/footer.css" th:href="@{/css/footer.css}">
+    <title>Input</title>
 </head>
 <body>
+<header th:replace="~{HeaderAndFooter::Header}">
+    <h1>Some header text</h1>
+</header>
+<main>
+    <table>
+        <tr>
+            <th>Product Id</th>
+            <th>Product Name</th>
+            <th>Product Price</th>
+            <th>Action</th>
+        </tr>
+        <tr th:each="product : ${productList}">
+            <td th:text="${product.id}">Product ID</td>
+            <td th:text="${product.name}">Product Name</td>
+            <td th:text="${product.price}">Product Price</td>
+            <td>
+                <form th:action="@{/addToCart}" method="post">
+                    <input type="hidden" name="productId" th:value="${product.id}" />
+                    <button type="submit">Add to Cart</button>
+                </form>
+            </td>
+        </tr>
+    </table>
 
+    <div>
+        <h3>Items in the shopping cart</h3>
+        <p th:text="${capacity}">0</p> <!-- This will display the capacity -->
+    </div>
+</main>
+<footer th:replace="~{HeaderAndFooter::footer}">
+    Some footer text
+</footer>
 </body>
 </html>
