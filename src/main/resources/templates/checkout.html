@@ -12,6 +12,30 @@
     <h1>Some header text</h1>
 </header>
 <main>
+    <h2>Checkout Page</h2>
+    <div th:if="${not #lists.isEmpty(cartItems)}">
+        <table>
+            <tr>
+                <th>Product Id</th>
+                <th>Product Name</th>
+                <th>Product Price</th>
+            </tr>
+            <tr th:each="item : ${cartItems}">
+                <td th:text="${item.id}">Product ID</td>
+                <td th:text="${item.name}">Product Name</td>
+                <td th:text="${item.price}">Product Price</td>
+            </tr>
+        </table>
+    </div>
+
+    <div>
+        <h3>Subtotal</h3>
+        <p th:text="${subTotal}">0</p>
+        <h3>Sales Tax 13%</h3>
+        <p th:text="${salesTax}">0</p>
+        <h3>Subtotal</h3>
+        <p th:text="${total}">0</p>
+    </div>
 </main>
 <footer th:replace="~{HeaderAndFooter::footer}">
     Some footer text

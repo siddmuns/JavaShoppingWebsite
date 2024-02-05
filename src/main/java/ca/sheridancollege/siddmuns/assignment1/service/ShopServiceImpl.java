@@ -38,6 +38,23 @@ public class ShopServiceImpl implements ShopService {
     }
 
     @Override
+    public float getSubTotal() {
+        return shoppingCart.getSubTotal();
+    }
+
+    @Override
+    public float getSalesTax() {
+        float salesTax = shoppingCart.getSubTotal();
+        salesTax *= 0.13F;
+        return salesTax;
+    }
+
+    @Override
+    public float getTotal() {
+        return getSubTotal() + getSalesTax();
+    }
+
+    @Override
     public List<Product> getAllProducts() {
         return inventory.getProducts();
     }

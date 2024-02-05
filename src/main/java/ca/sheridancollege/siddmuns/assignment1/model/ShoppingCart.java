@@ -11,17 +11,17 @@ public class ShoppingCart {
 
     private int capacity;
 
-    private float priceTotal;
+    private float subTotal;
 
     public ShoppingCart() {
         this.cartItems = new ArrayList<>();
         this.capacity = 0;
-        this.priceTotal= 0;
+        this.subTotal= 0;
     }
 
     public void insertItemToCart (Product product) {
         cartItems.add(product);
         capacity++;
-        priceTotal += product.getPrice();
+        subTotal += product.getPrice();
     }
 }

@@ -18,6 +18,11 @@ public interface ShopService {
 
     public int getCartCapacity();
 
+    public float getSubTotal();
+
+    public float getSalesTax();
+
+    public float getTotal();
 
     public List<Product> getAllProducts();
 

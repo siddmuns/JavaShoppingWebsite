@@ -75,6 +75,12 @@ public class ShopController {
     @GetMapping("/checkout")
     public ModelAndView checkout() {
         log.trace("checkout() is called");
-        return new ModelAndView("shopping");
+        List<Product> cartItems = shopService.getShoppingCart();
+        ModelAndView modelAndView = new ModelAndView("checkout");
+        modelAndView.addObject("cartItems", cartItems);
+        modelAndView.addObject("subTotal", shopService.getSubTotal());
+        modelAndView.addObject("salesTax", shopService.getSalesTax());
+        modelAndView.addObject("total", shopService.getTotal());
+        return modelAndView;
     }
 }
