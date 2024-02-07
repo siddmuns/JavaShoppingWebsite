@@ -10,21 +10,21 @@ import java.util.Random;
 
 
 public interface ShopService {
-    public int getRandomId();
+    int getRandomId();
 
-    public void addProductToShoppingCart(int id);
+    void addProductToShoppingCart(int id);
 
-    public void insertProductToInventory(Product product);
+    void insertProductToInventory(Product product);
 
-    public int getCartCapacity();
+    int getCartCapacity();
 
-    public float getSubTotal();
+    float getSubTotal();
 
-    public float getSalesTax();
+    float getSalesTax();
 
-    public float getTotal();
+    float getTotal();
 
-    public List<Product> getAllProducts();
+    List<Product> getAllProducts();
 
-    public List<Product> getShoppingCart();
+    List<Product> getShoppingCart();
 }

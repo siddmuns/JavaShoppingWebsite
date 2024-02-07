@@ -55,9 +55,7 @@ public class ShopServiceImpl implements ShopService {
     }
 
     @Override
-    public List<Product> getAllProducts() {
-        return inventory.getProducts();
-    }
+    public List<Product> getAllProducts() {return inventory.getProducts();}
 
     @Override
     public List<Product> getShoppingCart() {

@@ -48,7 +48,7 @@ public class ShopController {
         ModelAndView modelAndView = new ModelAndView("product");
         modelAndView.addObject("productList", productList);
         modelAndView.addObject("randomId", shopService.getRandomId());
-        return modelAndView; // Redirect after post to prevent double submission
+        return modelAndView;
     }
 
     @GetMapping("/shopping")
@@ -69,7 +69,7 @@ public class ShopController {
         ModelAndView modelAndView = new ModelAndView("shopping");
         modelAndView.addObject("productList", productList);
         modelAndView.addObject("capacity", shopService.getCartCapacity());
-        return modelAndView; // Redirect after post to prevent double submission
+        return modelAndView;
     }
 
     @GetMapping("/checkout")

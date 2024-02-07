@@ -1,14 +1,13 @@
-/* header.css */
 header {
-    background-color: #f8f8f8; /* Adjust the color to match your specific header background */
+    background-color: #f8f8f8;
     padding: 10px 0;
     text-align: center;
-    border-bottom: 2px solid #ccc; /* This adds a bottom border to the header */
+    border-bottom: 2px solid #ccc;
 }
 
 header h1 {
     margin: 0;
-    color: #333; /* Adjust the color to match the text color of your header */
+    color: #333;
     font-family: Arial, sans-serif;
 }
 
@@ -25,8 +24,6 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #333; /* Adjust the color to match the text color of your navigation links */
+    color: #333;
     font-family: Arial, sans-serif;
 }
-
-
